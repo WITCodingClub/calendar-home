@@ -2,7 +2,7 @@ import { writable } from 'svelte/store';
 import { goto } from '$app/navigation';
 import { browser } from '$app/environment';
 
-export const selected = writable('/');
+export const selected = writable('');
 
 selected.subscribe((value) => {
     if (browser && value) {

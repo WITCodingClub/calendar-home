@@ -2,6 +2,12 @@
     import { ConnectedButtons } from "m3-svelte";
     import { Button } from "m3-svelte";
     import { selected } from '$lib/store.svelte';
+    import { onMount } from 'svelte';
+    import { page } from '$app/state';
+
+    onMount(() => {
+        $selected = page.url.pathname;
+    });
 
 </script>
 
