@@ -3,6 +3,10 @@
     import { Button } from "m3-svelte";
 </script>
 
+<svelte:head>
+	<title>WIT-Calendar</title>
+</svelte:head>
+
 <div class="flex flex-row justify-center items-center mt-12 md:mt-24 px-4 text-center sm:text-left">
     <svg class="w-14 h-14 md:w-30 md:h-30" viewBox="0 0 190 203" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="4" y="17" width="182" height="182" rx="12" stroke="#060606" stroke-width="8"/>
