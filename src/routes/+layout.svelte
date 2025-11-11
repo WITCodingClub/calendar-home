@@ -49,6 +49,7 @@
 	<link rel="preload" as="image" href="/primary_wit_ss.webp" />
 	<link rel="preload" as="image" href="/secondary_wit_ss.webp" />
 	<link rel="preload" as="image" href="/third_wit_ss.webp" />
+	<title>WIT-Calendar</title>
 </svelte:head>
 
 <TopBar />
