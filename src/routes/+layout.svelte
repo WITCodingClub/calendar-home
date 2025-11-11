@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import '../main.css';
-	import favicon from '$lib/assets/favicon.svg';
+	import favicon from '$lib/assets/favicon.png';
 	import TopBar from '$lib/components/TopBar.svelte';
 	import { fly } from 'svelte/transition';
 	import { selected } from '$lib/store.svelte';
