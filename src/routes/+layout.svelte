@@ -13,7 +13,7 @@
 
 	let { children } = $props();
 
-	const order = ['/', '/about', '/contact'];
+	const order = ['/', '/about', '/contact', '/privacy'];
 	const inX = writable(0);
 	const outX = writable(0);
 	const activeTransitions = writable(0);
