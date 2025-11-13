@@ -325,10 +325,10 @@
 			<span style="font-size: 15px;"
 				><span data-custom-class="body_text"
 					><strong>How do you exercise your rights?</strong> The easiest way to exercise your rights
-					is by <bdt class="block-component"></bdt>visiting
-					<span style="color: rgb(0, 58, 250);"><bdt class="question">__________</bdt></span><bdt
+					is by <bdt class="block-component"></bdt>
+					<span style="color: rgb(0, 58, 250);"><bdt class="question"></bdt></span><bdt
 						class="else-block"
-					></bdt>, or by contacting us. We will consider and act upon any request in accordance with
+					></bdt> contacting us. We will consider and act upon any request in accordance with
 					applicable data protection laws.</span
 				></span
 			>
@@ -4407,7 +4407,7 @@
 																																											style="color: rgb(0, 58, 250);"
 																																											><bdt
 																																												class="question"
-																																												>__________</bdt
+																																												>https://discord.com/invite/fkeM94snmy</bdt
 																																											></span
 																																										>,
 																																										<bdt
