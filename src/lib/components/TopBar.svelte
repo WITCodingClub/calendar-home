@@ -20,8 +20,6 @@
         <Button for="seg-b" variant="filled">About</Button>
         <input type="radio" name="seg" id="seg-c" bind:group={$selected} value="/contact" />
         <Button for="seg-c" variant="filled">Contact</Button>
-        <input type="radio" name="seg" id="seg-d" bind:group={$selected} value="/privacy" />
-        <Button for="seg-d" variant="filled">Privacy</Button>
     </ConnectedButtons>
     </div>
 </div>

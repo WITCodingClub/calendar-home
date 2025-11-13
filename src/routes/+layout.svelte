@@ -3,6 +3,7 @@
 	import '../main.css';
 	import favicon from '$lib/assets/favicon.png';
 	import TopBar from '$lib/components/TopBar.svelte';
+	import BottomBar from '$lib/components/BottomBar.svelte';
 	import { fly } from 'svelte/transition';
 	import { selected } from '$lib/store.svelte';
 	import { cubicInOut } from 'svelte/easing';
@@ -13,7 +14,7 @@
 
 	let { children } = $props();
 
-	const order = ['/', '/about', '/contact', '/privacy'];
+	const order = ['/', '/about', '/contact', '/privacy', '/tos'];
 	const inX = writable(0);
 	const outX = writable(0);
 	const activeTransitions = writable(0);
@@ -54,7 +55,7 @@
 
 <TopBar />
 
-<div class="relative overflow-hidden overflow-x-hidden overflow-y-hidden">
+<div class="relative overflow-hidden overflow-x-hidden overflow-y-hidden min-h-screen flex flex-col">
 	{#key page.url.pathname}
 		<div
 			in:fly={{ x: $inX, opacity: 1, duration: $skipAnim ? 0 : 500, easing: cubicInOut }}
@@ -65,8 +66,10 @@
 			onoutroend={() => activeTransitions.update((n) => Math.max(0, n - 1))}
 			class:absolute={$activeTransitions > 0 && !$skipAnim}
 			class:inset-0={$activeTransitions > 0 && !$skipAnim}
+			class="flex-1"
 		>
 			{@render children()}
 		</div>
 	{/key}
+	<BottomBar />
 </div>
