@@ -9,6 +9,10 @@
         $selected = page.url.pathname;
     });
 
+    $effect(() => {
+        $selected = page.url.pathname;
+    });
+
 </script>
 
 <div class="flex justify-center items-center mt-4 w-full px-2 sm:px-4">
