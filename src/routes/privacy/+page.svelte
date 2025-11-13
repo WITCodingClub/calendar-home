@@ -4402,12 +4402,12 @@
 																																										us <bdt
 																																											class="block-component"
 																																										></bdt>by
-																																										visiting
+																																										emailing us at
 																																										<span
 																																											style="color: rgb(0, 58, 250);"
 																																											><bdt
 																																												class="question"
-																																												>https://discord.com/invite/fkeM94snmy</bdt
+																																												>contact@calendar.witcc.dev</bdt
 																																											></span
 																																										>,
 																																										<bdt
