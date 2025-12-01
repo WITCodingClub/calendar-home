@@ -27,6 +27,15 @@
         WIT-Calendar is a Chrome extension that allows you to easily import your classes into your calendar!
         <br>
         It supports all major calendars, including Google Calendar, Microsoft Outlook, and Apple Calendar.
+        <br>
+        <br>
+        Check out the status page for the server below!
+        <br>
+        <br>
+        <Button square variant="tonal" onclick={() => window.open('https://stats.uptimerobot.com/QS76oPqfzz', '_blank')}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19V5q0-.825.588-1.412T5 3h7v2H5v14h14v-7h2v7q0 .825-.587 1.413T19 21zm4.7-5.3l-1.4-1.4L17.6 5H14V3h7v7h-2V6.4z"/></svg>        
+            Status Page
+        </Button>
     </p>
 </div>
 
