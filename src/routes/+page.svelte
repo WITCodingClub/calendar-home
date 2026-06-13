@@ -1,6 +1,18 @@
 <script lang="ts">
+    import { onMount } from "svelte";
     import { selected } from "$lib/store.svelte";
     import { Button } from "m3-svelte";
+
+    let authStatus: { authenticated: boolean; admin: boolean } | null = null;
+
+    onMount(async () => {
+        try {
+            const res = await fetch("/session/status", { credentials: "include" });
+            if (res.ok) authStatus = await res.json();
+        } catch {
+            // stay null → show Sign In
+        }
+    });
 </script>
 
 <svelte:head>
@@ -33,12 +45,21 @@
     <Button variant="filled" onclick={() => window.open('https://chromewebstore.google.com/detail/wit-calendar/aceelinogfcceklkpacakdeddnaakicj', '_blank', 'noopener,noreferrer')}><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m16 8.4l-8.9 8.9q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7L14.6 7H7q-.425 0-.712-.288T6 6t.288-.712T7 5h10q.425 0 .713.288T18 6v10q0 .425-.288.713T17 17t-.712-.288T16 16z"/></svg>
         Web Store
     </Button>
+        {#if authStatus?.authenticated}
+        <Button variant="filled" onclick={() => window.location.href = authStatus?.admin ? "/admin" : "/dashboard"}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 -960 960 960">
+                <path fill="currentColor" d="M520-600v-240h320v240H520ZM120-440v-400h320v400H120Zm400 320v-400h320v400H520Zm-400 0v-240h320v240H120Z"/>
+            </svg>
+            {authStatus?.admin ? "Admin Panel" : "My Dashboard"}
+        </Button>
+    {:else}
         <Button variant="filled" onclick={() => window.location.href = "/users/sign_in"}>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path fill="currentColor" d="M12 3.25a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-1.5 0V4a.75.75 0 0 1 .75-.75M6.166 5.106a.75.75 0 0 1 .022 1.06A7.25 7.25 0 1 0 17.812 6.166a.75.75 0 1 1 1.083-1.038A8.75 8.75 0 1 1 5.106 17.834a8.75 8.75 0 0 1 0-12.728a.75.75 0 0 1 1.06.022z"/>
-    </svg>
-    Sign In
-</Button>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 -960 960 960">
+                <path fill="currentColor" d="M480-120v-80h280v-560H480v-80h280q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H480Zm-80-160-55-58 102-102H120v-80h327L345-622l55-58 200 200-200 200Z"/>
+            </svg>
+            Sign In
+        </Button>
+    {/if}
 </div>
 
 
